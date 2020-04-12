@@ -1,0 +1,47 @@
+;This is the configuration file for the 1620 display program 
+;It is advisable to backup this file before making any changes 
+
+[Version]
+config version = 1.0
+
+;When entering times, us 24 hour HHMM format e.g. 0700 or 1630
+;For Air Force folks 7 A.M. is 0700 and 4:30 P.M. is 1630
+
+[Times]
+TV on = 0600
+TV off = 1730
+Duty start = 0700
+Duty stop  = 1630
+Short day = 7 ; Do you have a regularly shortend duty day 0 = Monday ... 6 = Sunday 7 = No Short Day
+Hours short = 1 ; How many hours early do you leave on the short day .5 = 30 minutes, 1 = 1 hour
+End of day sound = True ;Play a sound at the end of the duty day
+
+[Device]
+Update frequency = 7000 ;how often to take a reading from the 1620 in milliseconds
+Record time = 300000 ;how often to store a record in milliseconds
+Max reading age = 30 ;how old a reading can be before an error displayed
+Stored hours = 8 ;number of hours to store for the stats display
+1620 password = 1620
+Display correction = 2.65 ;Use this to correct for diffrent screen formats
+Baudrate = 57600 ; The device baudrate setting
+
+[Alarms]
+;These settings are in %RH
+RH max = 50.0
+RH min = 20.0
+RH nominal = 35.0
+RH tolerance = 15.0
+RH borderline = 3.0 ; the threshold to turn the screen yellow
+
+;These settings are in Fahrenheit Degrees
+Temp max = 79.0
+Temp min = 67.0
+Temp nominal = 73.0
+Temp tolerance = 6.0
+Temp borderline = 1.0
+
+[Network]
+Use network time = True ;set to True if network time service is availible.  False relies on the 1620 clock.
+Use network storage = True ;set True if running a network database server.  Falsie uses local storage only.
+ServerA address = 192.168.0.10
+ServerB address = 192.168.0.11

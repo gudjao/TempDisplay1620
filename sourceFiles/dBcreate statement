@@ -1,0 +1,4 @@
+create database envDatabase;
+
+
+CREATE TABLE envDatabase.readings(record_id INT AUTO_INCREMENT PRIMARY KEY, dateTime BIGINT, location TEXT, tempF REAL, rh REAL, alarm TINYINT, alarmTHigh TINYINT, alarmTLow TINYINT, alarmRHHigh TINYINT, alarmRHLow TINYINT, continuous TINYINT);
